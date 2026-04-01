@@ -1,0 +1,139 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/map/map.jpg" type="Texture" id=1]
+[ext_resource path="res://assets/OCRB.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/Map.gd" type="Script" id=3]
+[ext_resource path="res://assets/map/help.png" type="Texture" id=4]
+[ext_resource path="res://assets/map/help_click.png" type="Texture" id=5]
+[ext_resource path="res://assets/map/help_hover.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+outline_size = 2
+outline_color = Color( 0.352941, 0.227451, 0.145098, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=1]
+default_font = SubResource( 2 )
+Label/colors/font_color = Color( 0.776471, 0.682353, 0.611765, 1 )
+
+[node name="Map" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 1 )
+script = ExtResource( 3 )
+
+[node name="BG" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="M" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 50
+custom_constants/margin_left = 50
+
+[node name="HB" type="HBoxContainer" parent="M"]
+margin_left = 50.0
+margin_right = 1316.0
+margin_bottom = 768.0
+
+[node name="Rumah" type="VBoxContainer" parent="M/HB"]
+margin_right = 419.0
+margin_bottom = 768.0
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="M/HB/Rumah"]
+margin_right = 419.0
+margin_bottom = 440.0
+rect_min_size = Vector2( 0, 440 )
+focus_mode = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+flat = true
+
+[node name="Label" type="Label" parent="M/HB/Rumah"]
+margin_top = 444.0
+margin_right = 419.0
+margin_bottom = 768.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "   Rumah"
+align = 1
+
+[node name="Dapur" type="VBoxContainer" parent="M/HB"]
+margin_left = 423.0
+margin_right = 842.0
+margin_bottom = 768.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="M/HB/Dapur"]
+margin_right = 419.0
+margin_bottom = 244.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Dapur"
+align = 1
+valign = 2
+
+[node name="Button" type="Button" parent="M/HB/Dapur"]
+margin_top = 248.0
+margin_right = 419.0
+margin_bottom = 768.0
+rect_min_size = Vector2( 0, 520 )
+focus_mode = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+flat = true
+
+[node name="Perpustakaan" type="VBoxContainer" parent="M/HB"]
+margin_left = 846.0
+margin_right = 1266.0
+margin_bottom = 768.0
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="M/HB/Perpustakaan"]
+margin_right = 420.0
+margin_bottom = 550.0
+rect_min_size = Vector2( 0, 550 )
+focus_mode = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+flat = true
+
+[node name="Label" type="Label" parent="M/HB/Perpustakaan"]
+margin_top = 554.0
+margin_right = 420.0
+margin_bottom = 768.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Perpustakaan"
+align = 1
+
+[node name="M2" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
+
+[node name="HelpButton" type="TextureButton" parent="M2"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 170.0
+margin_bottom = 170.0
+rect_min_size = Vector2( 120, 120 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 6 )
+expand = true
+stretch_mode = 5

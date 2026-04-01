@@ -1,0 +1,153 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/perpus/library/bg_shelf.jpg" type="Texture" id=1]
+[ext_resource path="res://assets/perpus/library/biologi_book.png" type="Texture" id=2]
+[ext_resource path="res://assets/perpus/library/biologi_hover.png" type="Texture" id=3]
+[ext_resource path="res://assets/perpus/library/fisika_book.png" type="Texture" id=4]
+[ext_resource path="res://assets/perpus/library/fisika_hover.png" type="Texture" id=5]
+[ext_resource path="res://assets/perpus/library/kimia_book.png" type="Texture" id=6]
+[ext_resource path="res://assets/perpus/library/kimia_hover.png" type="Texture" id=7]
+[ext_resource path="res://assets/perpus/library/mtk_book.png" type="Texture" id=8]
+[ext_resource path="res://assets/perpus/library/mtk_hover.png" type="Texture" id=9]
+[ext_resource path="res://assets/OCRB.tres" type="DynamicFont" id=10]
+[ext_resource path="res://scenes/Perpustakaan.gd" type="Script" id=11]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 10 )
+
+[node name="Perpustakaan" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 1 )
+script = ExtResource( 11 )
+
+[node name="BG" type="TextureRect" parent="."]
+margin_right = 1366.0
+margin_bottom = 768.0
+texture = ExtResource( 1 )
+stretch_mode = 6
+
+[node name="M" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 224
+custom_constants/margin_top = 45
+custom_constants/margin_left = 224
+
+[node name="VB" type="VBoxContainer" parent="M"]
+margin_left = 224.0
+margin_top = 45.0
+margin_right = 1142.0
+margin_bottom = 768.0
+custom_constants/separation = 0
+
+[node name="Row1" type="HBoxContainer" parent="M/VB"]
+margin_right = 918.0
+margin_bottom = 281.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 76
+
+[node name="Biologi" type="VBoxContainer" parent="M/VB/Row1" groups=["item"]]
+margin_right = 421.0
+margin_bottom = 281.0
+size_flags_horizontal = 3
+
+[node name="TextureButton" type="TextureButton" parent="M/VB/Row1/Biologi"]
+margin_right = 421.0
+margin_bottom = 227.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 3 )
+expand = true
+
+[node name="Label" type="Label" parent="M/VB/Row1/Biologi"]
+margin_top = 231.0
+margin_right = 421.0
+margin_bottom = 281.0
+rect_min_size = Vector2( 0, 50 )
+text = "Biologi"
+align = 1
+
+[node name="Fisika" type="VBoxContainer" parent="M/VB/Row1" groups=["item"]]
+margin_left = 497.0
+margin_right = 918.0
+margin_bottom = 281.0
+size_flags_horizontal = 3
+
+[node name="TextureButton" type="TextureButton" parent="M/VB/Row1/Fisika"]
+margin_right = 421.0
+margin_bottom = 227.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 5 )
+expand = true
+
+[node name="Label" type="Label" parent="M/VB/Row1/Fisika"]
+margin_top = 231.0
+margin_right = 421.0
+margin_bottom = 281.0
+rect_min_size = Vector2( 0, 50 )
+text = "Fisika"
+align = 1
+
+[node name="Row2" type="HBoxContainer" parent="M/VB"]
+margin_top = 281.0
+margin_right = 918.0
+margin_bottom = 563.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 76
+
+[node name="Kimia" type="VBoxContainer" parent="M/VB/Row2" groups=["item"]]
+margin_right = 421.0
+margin_bottom = 282.0
+size_flags_horizontal = 3
+
+[node name="TextureButton" type="TextureButton" parent="M/VB/Row2/Kimia"]
+margin_right = 421.0
+margin_bottom = 224.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
+expand = true
+
+[node name="Label" type="Label" parent="M/VB/Row2/Kimia"]
+margin_top = 228.0
+margin_right = 421.0
+margin_bottom = 282.0
+rect_min_size = Vector2( 0, 54 )
+text = "Kimia"
+align = 1
+
+[node name="Matematika" type="VBoxContainer" parent="M/VB/Row2" groups=["item"]]
+margin_left = 497.0
+margin_right = 918.0
+margin_bottom = 282.0
+size_flags_horizontal = 3
+
+[node name="TextureButton" type="TextureButton" parent="M/VB/Row2/Matematika"]
+margin_right = 421.0
+margin_bottom = 224.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+expand = true
+
+[node name="Label" type="Label" parent="M/VB/Row2/Matematika"]
+margin_top = 228.0
+margin_right = 421.0
+margin_bottom = 282.0
+rect_min_size = Vector2( 0, 54 )
+text = "Matematika"
+align = 1
+
+[node name="Separator2" type="Control" parent="M/VB"]
+margin_top = 563.0
+margin_right = 918.0
+margin_bottom = 723.0
+rect_min_size = Vector2( 0, 160 )

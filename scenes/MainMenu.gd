@@ -48,7 +48,7 @@ func on_exit_pressed():
 	get_tree().quit()
 
 func on_play_pressed():
-	pass
+	get_tree().change_scene("res://scenes/Map.tscn")
 
 func on_cat_finished(anim_name):
 	$AnimationPlayer.play("cat_anim")
